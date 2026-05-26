@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio 2 | Calon Guru Profesional</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <div style="display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.95); padding: 6px 12px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
+                <img src="assets/images/Logo%20Kemdikdasmen.png" alt="Kemdikdasmen" style="height: 28px; width: auto; object-fit: contain; display: block;">
+                <img src="assets/images/Logo-UM.png" alt="UM" style="height: 28px; width: auto; object-fit: contain; display: block;">
+                <img src="assets/images/Logo%20PPG.png" alt="PPG" style="height: 28px; width: auto; object-fit: contain; display: block;">
+            </div>
+            <span style="font-size: 1.25rem; font-weight: 700; color: #fff; font-family: 'Outfit', sans-serif;">E-Portfolio PPG</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li class="dropdown">
+                <a href="e-portfolio-1.html" class="dropbtn">E-Portfolio 1 <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 0.3rem;"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="e-portfolio-1.html#profil">Profil Mahasiswa</a></li>
+                    <li><a href="e-portfolio-1.html#artefak">Analisis Artefak Pembelajaran</a></li>
+                    <li><a href="e-portfolio-1.html#penilaian">Instrumen Penilaian (Lampiran 7 & 8)</a></li>
+                    <li><a href="e-portfolio-1.html#visi">Model Guru yang Dituju</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="e-portfolio-2.html" class="dropbtn" style="color: #fff;">E-Portfolio 2 <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 0.3rem;"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="e-portfolio-2.html#refleksi">Refleksi Akhir PPL Terbimbing</a></li>
+                    <li><a href="e-portfolio-2.html#filosofi">Filosofi Mengajar</a></li>
+                </ul>
+            </li>
+            <li><a href="#dokumentasi">Dokumentasi</a></li>
+            <li>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- ============================================== -->
+    <!--                E-PORTFOLIO 2                   -->
+    <!-- ============================================== -->
+    <div id="ep2" class="container portfolio-section" style="margin-top: 150px;">
+        <div style="text-align: center;">
+            <span class="portfolio-label" style="background: linear-gradient(135deg, rgba(16,185,129,0.2) 0%, rgba(56,189,248,0.2) 100%);">E-Portfolio 2</span>
+            <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 4rem;">Merumuskan prinsip dan nilai seorang guru sebagai refleksi akhir dari PPL Terbimbing yang menjadi landasan dan ideologi perjalanan pendidik profesional.</p>
+        </div>
+
+        <!-- 1. Refleksi Akhir PPL -->
+        <section id="refleksi" style="padding-top: 0;">
+            <div class="section-header">
+                <span class="section-subtitle">Bagian 1</span>
+                <h2 class="section-title">Refleksi Akhir PPL Terbimbing</h2>
+            </div>
+
+            <div class="reflection-grid">
+                <div class="glass-card reflection-card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Pengalaman Belajar</h3>
+                    <p>[Deskripsikan apa yang dipelajari selama tahap orientasi (mengenal budaya sekolah), observasi (karakter siswa), asistensi (membantu guru), hingga praktik pembelajaran terbimbing di kelas].</p>
+                </div>
+                
+                <div class="glass-card reflection-card">
+                    <i class="fa-solid fa-mountain"></i>
+                    <h3>Tantangan & Solusi</h3>
+                    <p>[Ceritakan pengalaman paling menantang, misal menghadapi siswa inklusi atau pasif, dan jelaskan solusi konkret yang Anda terapkan untuk mengatasi permasalahan tersebut].</p>
+                </div>
+
+                <div class="glass-card reflection-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>Umpan Balik & Perbaikan</h3>
+                    <p>[Sebutkan saran konstruktif dari GP/DPL dari diskusi refleksi akhir, dan bagaimana hal tersebut akan menjadi modal perbaikan untuk persiapan menuju tahap PPL Mandiri selanjutnya].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Filosofi Mengajar -->
+        <section id="filosofi">
+            <div class="section-header">
+                <span class="section-subtitle">Bagian 2</span>
+                <h2 class="section-title">Filosofi Mengajar</h2>
+            </div>
+
+            <div class="glass-card philosophy-card">
+                <div class="philosophy-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                
+                <div class="philosophy-content">
+                    <p>
+                        [Paragraf 1: Prinsip dan Keyakinan Dasar]. Saya meyakini bahwa setiap peserta didik lahir dengan keunikan dan potensinya masing-masing, bagaikan benih yang berbeda-beda jenisnya. Tugas seorang guru bukanlah mencetak mereka menjadi bentuk yang seragam, melainkan menjadi petani yang merawat dan menyediakan lingkungan subur agar benih tersebut dapat tumbuh optimal sesuai kodratnya. Prinsip ini sejalan dengan filosofi pendidikan Ki Hajar Dewantara mengenai sistem 'Among', di mana pendidik menuntun segala kekuatan kodrat yang ada pada anak.
+                    </p>
+                    <p>
+                        [Paragraf 2: Nilai dalam Praktik Pengajaran]. Selama proses PPL Terbimbing, nilai utama yang selalu saya kedepankan adalah empati dan inklusivitas. Saya mengadopsi teori Humanistik dari Carl Rogers yang menekankan pentingnya penerimaan tanpa syarat (unconditional positive regard) terhadap peserta didik. Dengan memahami latar belakang sosial-emosional mereka terlebih dahulu, saya dapat merancang pembelajaran yang tidak hanya berfokus pada transfer pengetahuan (kognitif), tetapi juga memberikan rasa aman secara psikologis yang mendorong mereka untuk berani mencoba dan belajar dari kesalahan.
+                    </p>
+                    <p>
+                        [Paragraf 3: Ideologi sebagai Profesional]. Ke depannya, ideologi yang akan terus saya pegang teguh sebagai guru profesional adalah menjadi fasilitator pembelajar sepanjang hayat. Mengacu pada pandangan John Dewey bahwa "pendidikan bukanlah persiapan untuk hidup, melainkan kehidupan itu sendiri", saya bertekad menciptakan ruang kelas yang demokratis dan relevan dengan dunia nyata. Saya akan terus merefleksikan praktik pengajaran saya, beradaptasi dengan inovasi pedagogik, dan menjadikan nilai-nilai ini sebagai kompas moral dalam setiap pengambilan keputusan di ruang kelas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Dokumentasi Kegiatan PPL -->
+        <section id="dokumentasi">
+            <div class="section-header">
+                <span class="section-subtitle">Bagian 3</span>
+                <h2 class="section-title">Dokumentasi Kegiatan PPL</h2>
+            </div>
+
+            <p style="color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 1.5rem;">
+                Dokumentasi visual rangkaian kegiatan Praktik Pengalaman Lapangan (PPL) Terbimbing di SMP Negeri 8 Malang.
+            </p>
+
+            <!-- Control Bar (Tambah Gambar) -->
+            <!-- Control Bar (Tambah Gambar) -->
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                <button id="btn-add-doc" onclick="openDocModal(false, null)" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; box-shadow: 0 10px 20px rgba(79,70,229,0.3); transition: all 0.3s ease;">
+                    <i class="fa-solid fa-plus-circle"></i> Tambah Dokumentasi Baru
+                </button>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="slider-container" style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 20px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
+                <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease-in-out; width: 100%;">
+                    <!-- Dynamic Slides will be injected here -->
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="slider-btn prev-btn" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: #fff; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(5px); z-index: 10;">
+                    <i class="fa-solid fa-chevron-left" style="font-size: 1.2rem;"></i>
+                </button>
+                <button class="slider-btn next-btn" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: #fff; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(5px); z-index: 10;">
+                    <i class="fa-solid fa-chevron-right" style="font-size: 1.2rem;"></i>
+                </button>
+
+                <!-- Indicators (Dots) -->
+                <div class="slider-dots" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10;">
+                    <!-- Dynamic Dots will be injected here -->
+                </div>
+            </div>
+
+            <!-- Modal Tambah/Edit Dokumentasi (Glassmorphism design) -->
+            <div id="add-doc-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+                <div class="glass-card" style="width: 95%; max-width: 500px; padding: 2.2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 25px 50px rgba(0,0,0,0.4); background: rgba(17, 24, 39, 0.95); transform: scale(0.9); transition: transform 0.3s ease; box-sizing: border-box;">
+                    <h3 id="modal-title-text" style="color: #fff; margin-bottom: 1.5rem; font-size: 1.4rem; font-family: 'Outfit', sans-serif; display: flex; align-items: center; gap: 10px; margin-top: 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.8rem;">
+                        <i class="fa-solid fa-camera" style="color: var(--secondary);"></i> Tambah Dokumentasi Baru
+                    </h3>
+                    
+                    <form id="add-doc-form" onsubmit="handleAddDoc(event)">
+                        <!-- Hidden Field for Editing Doc ID -->
+                        <input type="hidden" id="editing-doc-id" value="">
+
+                        <!-- Ambil Foto dari Lokal -->
+                        <div style="margin-bottom: 1.2rem; text-align: left;">
+                            <label style="display: block; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">
+                                <i class="fa-solid fa-file-image"></i> Ambil Foto dari Data Lokal (Upload)
+                            </label>
+                            <div class="file-upload-wrapper" style="position: relative; width: 100%; height: 60px; border: 2px dashed var(--glass-border); border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.02); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.borderColor='var(--primary-light)'; this.style.background='rgba(79, 70, 229, 0.05)';" onmouseout="this.style.borderColor='var(--glass-border)'; this.style.background='rgba(255,255,255,0.02)';">
+                                <input type="file" id="doc-image-file" accept="image/*" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;" onchange="handleFileSelect(this)">
+                                <div id="upload-status" style="color: var(--text-muted); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; pointer-events: none;">
+                                    <i class="fa-solid fa-cloud-arrow-up" style="color: var(--primary-light); font-size: 1.2rem;"></i>
+                                    <span>Pilih file gambar lokal...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pilih Gambar -->
+                        <div style="margin-bottom: 1.2rem; text-align: left;">
+                            <label style="display: block; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-images"></i> Atau Pilih Gambar dari Aset</label>
+                            <select id="doc-image-select" style="width: 100%; padding: 0.8rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; font-size: 0.95rem; font-family: 'Plus Jakarta Sans', sans-serif; box-sizing: border-box; cursor: pointer; outline: none; transition: border-color 0.3s ease;">
+                                <option value="assets/images/1.jpeg" style="background: #111;">Gambar 1 (1.jpeg)</option>
+                                <option value="assets/images/2.jpeg" style="background: #111;">Gambar 2 (2.jpeg)</option>
+                                <option value="assets/images/3.jpeg" style="background: #111;">Gambar 3 (3.jpeg)</option>
+                                <option value="assets/images/4.jpeg" style="background: #111;">Gambar 4 (4.jpeg)</option>
+                                <option value="assets/images/WhatsApp Image 2026-05-21 at 07.10.49 (1).jpeg" style="background: #111;">WhatsApp PPL (Siklus 1)</option>
+                                <option value="assets/images/WhatsApp Image 2026-05-21 at 07.10.52.jpeg" style="background: #111;">WhatsApp PPL (Siklus 2)</option>
+                                <option value="assets/images/WhatsApp Image 2026-05-21 at 07.10.53.jpeg" style="background: #111;">WhatsApp PPL (Siklus 3)</option>
+                                <option value="assets/images/Profil%201.JPG" style="background: #111;">Foto Profil (Profil 1.JPG)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Custom Image Input -->
+                        <div style="margin-bottom: 1.2rem; text-align: left;">
+                            <label style="display: block; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-link"></i> Atau Input Path/URL Gambar Kustom</label>
+                            <input type="text" id="doc-image-custom" placeholder="contoh: assets/images/profil.jpg" style="width: 100%; padding: 0.8rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; font-size: 0.95rem; font-family: 'Plus Jakarta Sans', sans-serif; box-sizing: border-box; outline: none; transition: border-color 0.3s ease;">
+                        </div>
+
+                        <!-- Judul -->
+                        <div style="margin-bottom: 1.2rem; text-align: left;">
+                            <label style="display: block; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-heading"></i> Judul Kegiatan</label>
+                            <input type="text" id="doc-title" required placeholder="Contoh: Praktik Mengajar Siklus 3" style="width: 100%; padding: 0.8rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; font-size: 0.95rem; font-family: 'Plus Jakarta Sans', sans-serif; box-sizing: border-box; outline: none;">
+                        </div>
+
+                        <!-- Deskripsi -->
+                        <div style="margin-bottom: 1.8rem; text-align: left;">
+                            <label style="display: block; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-align-left"></i> Deskripsi Singkat</label>
+                            <textarea id="doc-desc" required rows="3" placeholder="Jelaskan mengenai kegiatan pada foto ini..." style="width: 100%; padding: 0.8rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; font-size: 0.95rem; font-family: 'Plus Jakarta Sans', sans-serif; resize: none; box-sizing: border-box; outline: none;"></textarea>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 1rem; justify-content: flex-end; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.2rem;">
+                            <button type="button" onclick="closeDocModal()" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                                Batal
+                            </button>
+                            <button type="submit" class="btn-primary" style="border: none; padding: 0.8rem 1.8rem; border-radius: 50px; font-weight: 600; cursor: pointer; box-shadow: 0 10px 20px rgba(79,70,229,0.3); transition: all 0.3s ease;">
+                                Simpan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div> <!-- End E-Portfolio 2 -->
+
+    <footer>
+        <div class="container">
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-bottom: 1rem;">E-Portfolio Pendidikan Profesi Guru</h3>
+            <p>&copy; 2026 Disusun untuk memenuhi komponen penilaian PPL.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.3);">
+                Menampilkan Profil Guru, Kedalaman Analisis, Refleksi Diri, dan Navigasi UI/UX Modern.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            htmlElement.setAttribute('data-theme', 'light');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-theme') === 'light') {
+                htmlElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                htmlElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Documentation Slider Persistent State & Logic
+        const STORAGE_KEY = 'ppg_eportfolio_documentation_v2';
+        
+        const defaultDocs = [
+            {
+                id: 1,
+                image: 'assets/images/1.jpeg',
+                title: 'Praktik Mengajar Siklus I',
+                desc: 'Penerapan perangkat pembelajaran inovatif berbasis digital di kelas Informatika SMP Negeri 8 Malang.'
+            },
+            {
+                id: 2,
+                image: 'assets/images/2.jpeg',
+                title: 'Asistensi & Kolaborasi',
+                desc: 'Kolaborasi erat dengan Guru Pamong dalam menganalisis karakteristik peserta didik dan merancang media.'
+            },
+            {
+                id: 3,
+                image: 'assets/images/3.jpeg',
+                title: 'Kegiatan Evaluasi & Refleksi',
+                desc: 'Evaluasi bersama DPL dan Guru Pamong untuk perbaikan berkelanjutan terhadap kinerja praktik mengajar.'
+            },
+            {
+                id: 4,
+                image: 'assets/images/4.jpeg',
+                title: 'Pembelajaran Kolaboratif',
+                desc: 'Siswa bekerja dalam kelompok kecil untuk menyelesaikan tantangan pemrograman visual Scratch secara interaktif.'
+            }
+        ];
+
+        let docsList = [];
+        let currentSlide = 0;
+
+        function initDocs() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                docsList = JSON.parse(stored);
+            } else {
+                docsList = [...defaultDocs];
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(docsList));
+            }
+            renderSlider();
+        }
+
+        function renderSlider() {
+            const wrapper = document.querySelector('.slider-wrapper');
+            const dotsContainer = document.querySelector('.slider-dots');
+            
+            if (docsList.length === 0) {
+                wrapper.innerHTML = `
+                    <div class="slide" style="width: 100%; flex-shrink: 0; padding: 4rem 2rem; background: rgba(255,255,255,0.02); text-align: center; box-sizing: border-box;">
+                        <i class="fa-solid fa-images" style="font-size: 5rem; color: var(--text-muted); margin-bottom: 1.5rem; opacity: 0.3;"></i>
+                        <h3 style="color: var(--text-muted); margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Tidak Ada Dokumentasi</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Silakan tambahkan dokumentasi baru menggunakan tombol di atas.</p>
+                    </div>
+                `;
+                wrapper.style.width = '100%';
+                dotsContainer.innerHTML = '';
+                currentSlide = 0;
+                return;
+            }
+
+            if (currentSlide >= docsList.length) {
+                currentSlide = docsList.length - 1;
+            }
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            }
+
+            const N = docsList.length;
+            wrapper.style.width = (N * 100) + '%';
+            
+            let slidesHtml = '';
+            let dotsHtml = '';
+            
+            docsList.forEach((doc, idx) => {
+                slidesHtml += `
+                    <div class="slide" style="width: ${100 / N}%; flex-shrink: 0; padding: 3rem 2rem; background: rgba(255,255,255,0.01); text-align: center; box-sizing: border-box; position: relative;">
+                        <div style="width: 100%; height: 320px; background: rgba(0,0,0,0.2); border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid var(--glass-border); position: relative; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+                            <img src="${doc.image}" alt="${doc.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                            <button onclick="deleteDoc(${doc.id})" style="position: absolute; top: 12px; right: 12px; background: rgba(239, 68, 68, 0.9); border: none; color: #fff; padding: 8px 14px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; cursor: pointer; backdrop-filter: blur(5px); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4); transition: all 0.2s ease; display: flex; align-items: center; gap: 6px; z-index: 10;" onmouseover="this.style.background='rgb(239, 68, 68)'" onmouseout="this.style.background='rgba(239, 68, 68, 0.9)'">
+                                <i class="fa-solid fa-trash-can"></i> Hapus
+                            </button>
+                        </div>
+                        <h3 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.5rem; font-family: 'Outfit', sans-serif;">${doc.title}</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">${doc.desc}</p>
+                    </div>
+                `;
+                
+                dotsHtml += `
+                    <span class="dot ${idx === currentSlide ? 'active' : ''}" data-index="${idx}" onclick="goToSlide(${idx})" style="width: 10px; height: 10px; border-radius: 50%; background: ${idx === currentSlide ? '#fff' : 'rgba(255,255,255,0.3)'}; cursor: pointer; transition: all 0.3s ease; opacity: ${idx === currentSlide ? '1' : '0.5'};"></span>
+                `;
+            });
+
+            wrapper.innerHTML = slidesHtml;
+            dotsContainer.innerHTML = dotsHtml;
+            updateSliderPos();
+        }
+
+        function updateSliderPos() {
+            const wrapper = document.querySelector('.slider-wrapper');
+            const N = docsList.length;
+            if (N > 0) {
+                wrapper.style.transform = `translateX(-${currentSlide * (100 / N)}%)`;
+            }
+        }
+
+        function goToSlide(idx) {
+            currentSlide = idx;
+            renderSlider();
+        }
+
+        function nextSlide() {
+            if (docsList.length > 0) {
+                currentSlide = (currentSlide + 1) % docsList.length;
+                renderSlider();
+            }
+        }
+
+        function prevSlide() {
+            if (docsList.length > 0) {
+                currentSlide = (currentSlide - 1 + docsList.length) % docsList.length;
+                renderSlider();
+            }
+        }
+
+        function deleteDoc(id) {
+            if (confirm("Apakah Anda yakin ingin menghapus dokumentasi ini?")) {
+                docsList = docsList.filter(d => d.id !== id);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(docsList));
+                if (currentSlide >= docsList.length) {
+                    currentSlide = Math.max(0, docsList.length - 1);
+                }
+                renderSlider();
+            }
+        }
+
+        // Modal triggers
+        function openDocModal() {
+            const modal = document.getElementById('add-doc-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modal.querySelector('.glass-card').style.transform = 'scale(1)';
+            }, 10);
+        }
+
+        function closeDocModal() {
+            const modal = document.getElementById('add-doc-modal');
+            modal.style.opacity = '0';
+            modal.querySelector('.glass-card').style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.getElementById('add-doc-form').reset();
+            }, 300);
+        }
+
+        function handleAddDoc(e) {
+            e.preventDefault();
+            const selectImg = document.getElementById('doc-image-select').value;
+            const customImg = document.getElementById('doc-image-custom').value.trim();
+            const title = document.getElementById('doc-title').value.trim();
+            const desc = document.getElementById('doc-desc').value.trim();
+            
+            const image = customImg ? customImg : selectImg;
+            const newDoc = {
+                id: Date.now(),
+                image,
+                title,
+                desc
+            };
+
+            docsList.push(newDoc);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(docsList));
+            currentSlide = docsList.length - 1; // Go to the newly added slide
+            closeDocModal();
+            renderSlider();
+        }
+
+        // Initialize and bind static elements
+        document.addEventListener('DOMContentLoaded', () => {
+            initDocs();
+            
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        });
+
+        // Close modal on background click
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('add-doc-modal');
+            if (e.target === modal) {
+                closeDocModal();
+            }
+        });
+    </script>
+</body>
+</html>
