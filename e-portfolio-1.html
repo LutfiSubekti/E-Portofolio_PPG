@@ -53,7 +53,7 @@
                 <ul class="dropdown-content">
                     <li><a href="e-portfolio-1.html#profil">Profil Mahasiswa</a></li>
                     <li><a href="e-portfolio-1.html#artefak">Analisis Artefak Pembelajaran</a></li>
-                    <li><a href="e-portfolio-1.html#penilaian">Instrumen Penilaian (Lampiran 7 & 8)</a></li>
+                    <li><a href="e-portfolio-1.html#penilaian">Instrumen Penilaian (Lampiran 7 &amp; 8)</a></li>
                     <li><a href="e-portfolio-1.html#visi">Model Guru yang Dituju</a></li>
                 </ul>
             </li>
@@ -72,7 +72,48 @@
                 </button>
             </li>
         </ul>
+        <!-- Hamburger Button -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-drawer">
+        <a href="index.html"><i class="fa-solid fa-house" style="margin-right:0.5rem; color:var(--primary-light);"></i> Beranda</a>
+        <div class="mobile-nav-divider"></div>
+        <button class="mobile-dropdown-toggle" data-target="mob-sub-ep1">
+            <span><i class="fa-solid fa-folder-open" style="margin-right:0.5rem; color:var(--secondary);"></i> E-Portfolio 1</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="mobile-submenu" id="mob-sub-ep1">
+            <a href="e-portfolio-1.html">Halaman Utama EP-1</a>
+            <a href="e-portfolio-1.html#profil">Profil Mahasiswa</a>
+            <a href="e-portfolio-1.html#artefak">Analisis Artefak</a>
+            <a href="e-portfolio-1.html#penilaian">Instrumen Penilaian</a>
+            <a href="e-portfolio-1.html#visi">Model Guru yang Dituju</a>
+        </div>
+        <button class="mobile-dropdown-toggle" data-target="mob-sub-ep2">
+            <span><i class="fa-solid fa-folder-open" style="margin-right:0.5rem; color:#10b981;"></i> E-Portfolio 2</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="mobile-submenu" id="mob-sub-ep2">
+            <a href="e-portfolio-2.html">Halaman Utama EP-2</a>
+            <a href="e-portfolio-2.html#refleksi">Refleksi Akhir PPL</a>
+            <a href="e-portfolio-2.html#filosofi">Filosofi Mengajar</a>
+        </div>
+        <a href="e-portfolio-2.html#dokumentasi"><i class="fa-solid fa-images" style="margin-right:0.5rem; color:var(--warning);"></i> Dokumentasi</a>
+        <div class="mobile-nav-divider"></div>
+        <div class="mobile-theme-row">
+            <span><i class="fa-solid fa-circle-half-stroke" style="margin-right:0.5rem;"></i> Mode Tampilan</span>
+            <button id="theme-toggle-mobile" class="theme-toggle-btn" aria-label="Toggle Theme Mobile">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- ============================================== -->
     <!--                E-PORTFOLIO 1                   -->
@@ -134,7 +175,7 @@
 
                         <!-- Slide 3 -->
                         <div class="carousel-slide">
-                            <img src="assets/images/11.jpeg" alt="Universitas Negeri Malang" class="carousel-image">
+                            <img src="assets/images/Gedung.webp" alt="Universitas Negeri Malang" class="carousel-image">
                             <div class="carousel-overlay"></div>
                             <div class="carousel-caption-container">
                                 <span class="carousel-badge badge-almamater">
@@ -189,7 +230,7 @@
                             Pendidikan (LPTK):</strong>
                         <div
                             style="width: 100%; height: 130px; border-radius: 8px; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
-                            <img src="assets/images/lptk.png" alt="LPTK Universitas Negeri Malang"
+                            <img src="assets/images/Gedung.webp" alt="LPTK Universitas Negeri Malang"
                                 style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <p
@@ -866,6 +907,59 @@
                 nav.classList.remove('scrolled');
             }
         });
+
+        // ---- Mobile Hamburger Menu ----
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function openDrawer() {
+            hamburgerBtn.classList.add('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            mobileDrawer.classList.add('open');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            hamburgerBtn.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            mobileDrawer.classList.remove('open');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            if (mobileDrawer.classList.contains('open')) closeDrawer();
+            else openDrawer();
+        });
+
+        mobileOverlay.addEventListener('click', closeDrawer);
+
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.target;
+                const submenu = document.getElementById(targetId);
+                const isOpen = btn.classList.contains('open');
+                document.querySelectorAll('.mobile-dropdown-toggle').forEach(b => b.classList.remove('open'));
+                document.querySelectorAll('.mobile-submenu').forEach(m => m.classList.remove('open'));
+                if (!isOpen) { btn.classList.add('open'); submenu.classList.add('open'); }
+            });
+        });
+
+        mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeDrawer));
+
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        if (themeToggleMobile) {
+            const mobileIcon = themeToggleMobile.querySelector('i');
+            if (savedTheme === 'light') mobileIcon.classList.replace('fa-moon', 'fa-sun');
+            themeToggleMobile.addEventListener('click', () => {
+                themeToggle.click();
+                const isDark = !htmlElement.hasAttribute('data-theme');
+                mobileIcon.classList.toggle('fa-moon', isDark);
+                mobileIcon.classList.toggle('fa-sun', !isDark);
+            });
+        }
 
         // Premium Carousel Logic
         const track = document.querySelector('.carousel-track');

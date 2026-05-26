@@ -453,7 +453,7 @@ section {
 
 .artifacts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
     gap: 2.5rem;
 }
 
@@ -829,34 +829,614 @@ footer {
     color: var(--text-muted);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .hero h1 { font-size: 3rem; }
-    .profile-grid, .assessment-grid, .vision-grid, .reflection-grid {
+/* ============================================
+   HAMBURGER MENU & MOBILE DRAWER
+   ============================================ */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1100;
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Drawer Overlay */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1050;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Mobile Drawer Panel */
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: min(320px, 85vw);
+    height: 100dvh;
+    background: rgba(10, 15, 30, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    z-index: 1060;
+    padding: 5rem 1.5rem 2rem;
+    overflow-y: auto;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.mobile-nav-drawer.open {
+    right: 0;
+}
+
+.mobile-nav-drawer a,
+.mobile-nav-drawer .mobile-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    border: none;
+    background: transparent;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.mobile-nav-drawer a:hover,
+.mobile-nav-drawer .mobile-dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+}
+
+.mobile-nav-drawer .mobile-dropdown-toggle i {
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+.mobile-nav-drawer .mobile-dropdown-toggle.open i {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 1rem;
+    overflow: hidden;
+}
+
+.mobile-submenu.open {
+    display: flex;
+}
+
+.mobile-submenu a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    padding: 0.65rem 1rem;
+    font-weight: 500;
+}
+
+.mobile-submenu a:hover {
+    color: var(--primary-light);
+    background: rgba(79, 70, 229, 0.08);
+}
+
+.mobile-nav-divider {
+    height: 1px;
+    background: var(--glass-border);
+    margin: 0.5rem 0;
+}
+
+.mobile-theme-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+html[data-theme="light"] .mobile-nav-drawer {
+    background: rgba(241, 245, 249, 0.98);
+    border-left-color: rgba(0,0,0,0.1);
+}
+
+html[data-theme="light"] .mobile-nav-drawer a,
+html[data-theme="light"] .mobile-nav-drawer .mobile-dropdown-toggle {
+    color: #1e293b;
+}
+
+html[data-theme="light"] .mobile-nav-drawer a:hover,
+html[data-theme="light"] .mobile-nav-drawer .mobile-dropdown-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #0f172a;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* --- Tablet (max 1024px) --- */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .profile-grid {
         grid-template-columns: 1fr;
     }
+
+    .hero-image-inner {
+        width: 340px;
+        height: 420px;
+    }
+
+    .portfolio-section {
+        padding: 3rem 2.5rem;
+    }
+}
+
+/* --- Tablet portrait (max 992px) --- */
+@media (max-width: 992px) {
+    .assessment-grid,
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reflection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .hero {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 2.5rem;
+        padding-top: 120px;
     }
+
     .hero-content {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .portfolio-section {
-        padding: 2rem;
+
+    .hero p {
+        max-width: 100%;
     }
+
     .philosophy-card {
-        padding: 2rem;
+        padding: 2.5rem;
+    }
+
+    .portfolio-section {
+        padding: 2.5rem 2rem;
     }
 }
 
+/* --- Mobile landscape / large phones (max 768px) --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero h1 { font-size: 2.5rem; }
-    section { padding: 60px 0; }
+    /* Hide desktop nav links */
+    .nav-links {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        padding: 1rem 4%;
+    }
+
+    nav.scrolled {
+        padding: 0.75rem 4%;
+    }
+
+    /* Logo adjustments */
+    .logo span {
+        font-size: 1rem !important;
+    }
+
+    .logo > div img {
+        height: 22px !important;
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-image-inner {
+        width: 280px;
+        height: 340px;
+    }
+
+    /* Sections */
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Portfolio section */
+    .portfolio-section {
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+        margin-bottom: 3rem;
+    }
+
+    /* Glass card */
+    .glass-card {
+        padding: 1.5rem;
+        border-radius: 18px;
+    }
+
+    /* Profile grid */
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Reflection grid */
+    .reflection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Assessment & vision grid */
+    .assessment-grid,
+    .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Philosophy */
+    .philosophy-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .philosophy-content p {
+        font-size: 1rem;
+        text-indent: 1.5rem;
+    }
+
+    /* Artifacts grid */
+    .artifacts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Quote box */
+    .quote-box {
+        padding: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    .quote-text {
+        font-size: 1.1rem;
+    }
+
+    /* Buttons */
+    .btn-primary, .btn-secondary {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    /* Lampiran/cycle list */
+    .cycle-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .cycle-score {
+        align-self: flex-end;
+    }
+
+    /* Competency tags */
+    .competency-tags {
+        gap: 0.6rem;
+    }
+
+    .competency-tag {
+        padding: 0.6rem 1rem;
+        font-size: 0.88rem;
+    }
+
+    /* Carousel */
+    .premium-carousel {
+        height: 320px;
+        border-radius: 16px;
+    }
+
+    .carousel-caption-container {
+        padding: 1.25rem;
+    }
+
+    .carousel-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .carousel-description {
+        font-size: 0.85rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .btn-prev { left: 0.75rem; }
+    .btn-next { right: 0.75rem; }
+
+    .carousel-indicators {
+        right: 1rem;
+        bottom: 0.75rem;
+    }
+
+    /* Dropdown hidden on mobile (use drawer) */
+    .dropdown-content {
+        display: none !important;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem 1rem;
+    }
+
+    footer h3 {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* --- Small mobile phones (max 480px) --- */
+@media (max-width: 480px) {
+    nav {
+        padding: 0.85rem 3.5%;
+    }
+
+    .logo span {
+        display: none !important;
+    }
+
+    .hero {
+        padding-top: 100px;
+        gap: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image-inner {
+        width: 240px;
+        height: 300px;
+    }
+
+    .badge {
+        font-size: 0.78rem;
+        padding: 0.4rem 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+
+    .portfolio-section {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+        margin-top: 100px !important;
+    }
+
+    .glass-card {
+        padding: 1.25rem;
+        border-radius: 14px;
+    }
+
+    .portfolio-label {
+        font-size: 1rem;
+        padding: 0.4rem 1.2rem;
+    }
+
+    .premium-carousel {
+        height: 260px;
+    }
+
+    .carousel-title {
+        font-size: 1.1rem;
+    }
+
+    .carousel-description {
+        display: none;
+    }
+
+    .carousel-badge {
+        font-size: 0.72rem;
+        padding: 0.3rem 0.75rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+        gap: 0.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .hero-buttons a {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .artifact-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+
+    .artifact-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .profile-story h3 {
+        font-size: 1.5rem;
+    }
+
+    .profile-story p {
+        font-size: 1rem;
+    }
+
+    .lampiran-box {
+        padding: 1.25rem;
+    }
+
+    .competency-tag {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.82rem;
+        gap: 0.5rem;
+    }
+
+    .reflection-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+    }
+
+    .philosophy-content p {
+        font-size: 0.95rem;
+        text-indent: 1.2rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    footer h3 {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* --- Extra small (max 360px) --- */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .premium-carousel {
+        height: 220px;
+    }
+
+    .carousel-caption-container {
+        padding: 0.9rem;
+    }
+
+    .carousel-title {
+        font-size: 1rem;
+    }
 }
 
 /* ===============================
