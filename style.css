@@ -1904,3 +1904,13 @@ html[data-theme="light"] .carousel-indicator.active {
     }
 }
 
+/* Light Theme Overrides for Hero Section */
+html[data-theme="light"] .hero h1 {
+    background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+html[data-theme="light"] .hero p {
+    color: #475569;
+}
