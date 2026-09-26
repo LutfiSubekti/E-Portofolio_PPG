@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester 2 | E-Portfolio PPG</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <div style="display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.95); padding: 6px 12px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
+                <img src="assets/images/Logo%20Kemdikdasmen.png" alt="Kemdikdasmen" style="height: 28px; width: auto; object-fit: contain; display: block;">
+                <img src="assets/images/Logo-UM.png" alt="UM" style="height: 28px; width: auto; object-fit: contain; display: block;">
+                <img src="assets/images/Logo%20PPG.png" alt="PPG" style="height: 28px; width: auto; object-fit: contain; display: block;">
+            </div>
+            <span style="font-size: 1.25rem; font-weight: 700; color: #fff; font-family: 'Outfit', sans-serif;">E-Portfolio PPG</span>
+        </a>
+                        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="semester-1.html" class="dropbtn">Semester 1</a>
+                <ul class="dropdown-content">
+                    <li><a href="e-portfolio-1.html">E-Portfolio 1</a></li>
+                    <li><a href="e-portfolio-2.html">E-Portfolio 2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="semester-2.html" class="dropbtn">Semester 2</a>
+                <ul class="dropdown-content">
+                    <li><a href="course-ct.html">Computational Thinking</a></li>
+                    <li><a href="course-filosofi.html">Filosofi Pendidikan</a></li>
+                    <li><a href="course-pemahaman.html">Pemahaman Peserta Didik</a></li>
+                    <li><a href="course-pembelajaran.html">Pembelajaran Mendalam</a></li>
+                    <li><a href="course-growth.html">Growth Mindset</a></li>
+                    <li><a href="course-selektif.html">Mata Kuliah Selektif</a></li>
+                </ul>
+            </li>
+            <li><a href="e-portfolio-2.html#dokumentasi">Dokumentasi</a></li>
+            <li>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </li>
+        </ul>
+        <!-- Hamburger Button -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+    <!-- Mobile Nav Drawer -->
+        <div class="mobile-nav-drawer" id="mobile-drawer">
+        <a href="index.html"><i class="fa-solid fa-house" style="margin-right:0.5rem; color:var(--primary-light);"></i> Home</a>
+        <div class="mobile-nav-divider"></div>
+        <button class="mobile-dropdown-toggle" data-target="mob-sub-semester1" onclick="window.location.href=\'semester-1.html\'">
+            <span><i class="fa-solid fa-folder-open" style="margin-right:0.5rem; color:var(--secondary);"></i> Semester 1</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="mobile-submenu" id="mob-sub-semester1">
+            <a href="e-portfolio-1.html">E-Portfolio 1</a>
+            <a href="e-portfolio-2.html">E-Portfolio 2</a>
+        </div>
+        <button class="mobile-dropdown-toggle" data-target="mob-sub-semester2" onclick="window.location.href='semester-2.html'">
+            <span><i class="fa-solid fa-folder" style="margin-right:0.5rem; color:#10b981;"></i> Semester 2</span>
+        </button>
+        <div class="mobile-submenu" id="mob-sub-semester2">
+            <a href="course-ct.html">Computational Thinking</a>
+            <a href="course-filosofi.html">Filosofi Pendidikan</a>
+            <a href="course-pemahaman.html">Pemahaman Peserta Didik</a>
+            <a href="course-pembelajaran.html">Pembelajaran Mendalam</a>
+            <a href="course-growth.html">Growth Mindset</a>
+            <a href="course-selektif.html">Mata Kuliah Selektif</a>
+        </div>
+        <a href="e-portfolio-2.html#dokumentasi"><i class="fa-solid fa-images" style="margin-right:0.5rem; color:var(--warning);"></i> Dokumentasi</a>
+        <div class="mobile-nav-divider"></div>
+        <div class="mobile-theme-row">
+            <span><i class="fa-solid fa-circle-half-stroke" style="margin-right:0.5rem;"></i> Mode Tampilan</span>
+            <button id="theme-toggle-mobile" class="theme-toggle-btn" aria-label="Toggle Theme Mobile">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="container" style="margin-top: 150px;">
+        <div class="section-header" style="text-align: left; max-width: 100%;">
+            <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Semester 2</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">Halaman ini berisi kumpulan artefak dan analisis dari setiap mata kuliah pada Semester 2 PPG Prajabatan Gelombang 1.</p>
+            <hr style="border-color: var(--glass-border); margin-top: 1rem; opacity: 0.5;">
+        </div>
+
+                        <div class="lms-dashboard">
+            <!-- Card 1 -->
+            <div onclick="window.location.href='course-ct.html'" style="cursor: pointer; display: block; height: 100%;">
+                <div class="lms-card" style="height: 100%;">
+                    <div class="lms-card-top" style="background-color: #1a7b5d;">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="lms-card-body">
+                        <span class="lms-card-title">COMPUTATIONAL THINKING</span>
+                        <div class="lms-artifact-list" id="acc-ct" onclick="event.stopPropagation()">
+                            <a href="course-ct.html" class="artifact-item"><i class="fa-solid fa-file-contract"></i> Analisis Perencanaan Mengajar</a>
+                            <a href="course-ct.html" class="artifact-item"><i class="fa-solid fa-book-open"></i> Analisis Materi Pembelajaran</a>
+                            <a href="course-ct.html" class="artifact-item"><i class="fa-solid fa-desktop"></i> Analisis Media Pembelajaran</a>
+                            <a href="course-ct.html" class="artifact-item"><i class="fa-solid fa-video"></i> Analisis Video Praktik Mengajar</a>
+                            <a href="course-ct.html" class="artifact-item"><i class="fa-solid fa-users-gear"></i> Analisis Kegiatan Nonmengajar</a>
+                            <a href="course-ct.html" class="artifact-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Penilaian & Analisis</a>
+                            <a href="course-ct.html" class="artifact-item"><i class="fa-solid fa-box-archive"></i> Kumpulan Artefak</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div onclick="window.location.href='course-filosofi.html'" style="cursor: pointer; display: block; height: 100%;">
+                <div class="lms-card" style="height: 100%;">
+                    <div class="lms-card-top" style="background-color: #4a5d3d;">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="lms-card-body">
+                        <span class="lms-card-title">PHILOSOPHY OF EDUCATION AND VALUE EDUCATION</span>
+                        <div class="lms-artifact-list" id="acc-filosofi" onclick="event.stopPropagation()">
+                            <a href="course-filosofi.html" class="artifact-item"><i class="fa-solid fa-file-contract"></i> Analisis Perencanaan Mengajar</a>
+                            <a href="course-filosofi.html" class="artifact-item"><i class="fa-solid fa-book-open"></i> Analisis Materi Pembelajaran</a>
+                            <a href="course-filosofi.html" class="artifact-item"><i class="fa-solid fa-desktop"></i> Analisis Media Pembelajaran</a>
+                            <a href="course-filosofi.html" class="artifact-item"><i class="fa-solid fa-video"></i> Analisis Video Praktik Mengajar</a>
+                            <a href="course-filosofi.html" class="artifact-item"><i class="fa-solid fa-users-gear"></i> Analisis Kegiatan Nonmengajar</a>
+                            <a href="course-filosofi.html" class="artifact-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Penilaian & Analisis</a>
+                            <a href="course-filosofi.html" class="artifact-item"><i class="fa-solid fa-box-archive"></i> Kumpulan Artefak</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div onclick="window.location.href='course-pemahaman.html'" style="cursor: pointer; display: block; height: 100%;">
+                <div class="lms-card" style="height: 100%;">
+                    <div class="lms-card-top" style="background-color: #d13014;">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="lms-card-body">
+                        <span class="lms-card-title">PEMAHAMAN TENTANG PESERTA DIDIK DAN PEMBELAJARAN</span>
+                        <div class="lms-artifact-list" id="acc-pemahaman" onclick="event.stopPropagation()">
+                            <a href="course-pemahaman.html" class="artifact-item"><i class="fa-solid fa-file-contract"></i> Analisis Perencanaan Mengajar</a>
+                            <a href="course-pemahaman.html" class="artifact-item"><i class="fa-solid fa-book-open"></i> Analisis Materi Pembelajaran</a>
+                            <a href="course-pemahaman.html" class="artifact-item"><i class="fa-solid fa-desktop"></i> Analisis Media Pembelajaran</a>
+                            <a href="course-pemahaman.html" class="artifact-item"><i class="fa-solid fa-video"></i> Analisis Video Praktik Mengajar</a>
+                            <a href="course-pemahaman.html" class="artifact-item"><i class="fa-solid fa-users-gear"></i> Analisis Kegiatan Nonmengajar</a>
+                            <a href="course-pemahaman.html" class="artifact-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Penilaian & Analisis</a>
+                            <a href="course-pemahaman.html" class="artifact-item"><i class="fa-solid fa-box-archive"></i> Kumpulan Artefak</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div onclick="window.location.href='course-pembelajaran.html'" style="cursor: pointer; display: block; height: 100%;">
+                <div class="lms-card" style="height: 100%;">
+                    <div class="lms-card-top" style="background-color: #263e7c;">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="lms-card-body">
+                        <span class="lms-card-title">PEMBELAJARAN MENDALAM DAN ASESMEN</span>
+                        <div class="lms-artifact-list" id="acc-pembelajaran" onclick="event.stopPropagation()">
+                            <a href="course-pembelajaran.html" class="artifact-item"><i class="fa-solid fa-file-contract"></i> Analisis Perencanaan Mengajar</a>
+                            <a href="course-pembelajaran.html" class="artifact-item"><i class="fa-solid fa-book-open"></i> Analisis Materi Pembelajaran</a>
+                            <a href="course-pembelajaran.html" class="artifact-item"><i class="fa-solid fa-desktop"></i> Analisis Media Pembelajaran</a>
+                            <a href="course-pembelajaran.html" class="artifact-item"><i class="fa-solid fa-video"></i> Analisis Video Praktik Mengajar</a>
+                            <a href="course-pembelajaran.html" class="artifact-item"><i class="fa-solid fa-users-gear"></i> Analisis Kegiatan Nonmengajar</a>
+                            <a href="course-pembelajaran.html" class="artifact-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Penilaian & Analisis</a>
+                            <a href="course-pembelajaran.html" class="artifact-item"><i class="fa-solid fa-box-archive"></i> Kumpulan Artefak</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div onclick="window.location.href='course-growth.html'" style="cursor: pointer; display: block; height: 100%;">
+                <div class="lms-card" style="height: 100%;">
+                    <div class="lms-card-top" style="background-color: #0b8004;">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="lms-card-body">
+                        <span class="lms-card-title">DASAR POLA PIKIR BERTUMBUH (GROWTH MINDSET) DALAM PEMBELAJARAN</span>
+                        <div class="lms-artifact-list" id="acc-growth" onclick="event.stopPropagation()">
+                            <a href="course-growth.html" class="artifact-item"><i class="fa-solid fa-file-contract"></i> Analisis Perencanaan Mengajar</a>
+                            <a href="course-growth.html" class="artifact-item"><i class="fa-solid fa-book-open"></i> Analisis Materi Pembelajaran</a>
+                            <a href="course-growth.html" class="artifact-item"><i class="fa-solid fa-desktop"></i> Analisis Media Pembelajaran</a>
+                            <a href="course-growth.html" class="artifact-item"><i class="fa-solid fa-video"></i> Analisis Video Praktik Mengajar</a>
+                            <a href="course-growth.html" class="artifact-item"><i class="fa-solid fa-users-gear"></i> Analisis Kegiatan Nonmengajar</a>
+                            <a href="course-growth.html" class="artifact-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Penilaian & Analisis</a>
+                            <a href="course-growth.html" class="artifact-item"><i class="fa-solid fa-box-archive"></i> Kumpulan Artefak</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div onclick="window.location.href='course-selektif.html'" style="cursor: pointer; display: block; height: 100%;">
+                <div class="lms-card" style="height: 100%;">
+                    <div class="lms-card-top" style="background-color: #d17c14;">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="lms-card-body">
+                        <span class="lms-card-title">Refleksi Mata Kuliah Selektif/ Elektif</span>
+                        <div class="lms-artifact-list" id="acc-selektif" onclick="event.stopPropagation()">
+                            <a href="course-selektif.html" class="artifact-item"><i class="fa-solid fa-file-contract"></i> Analisis Perencanaan Mengajar</a>
+                            <a href="course-selektif.html" class="artifact-item"><i class="fa-solid fa-book-open"></i> Analisis Materi Pembelajaran</a>
+                            <a href="course-selektif.html" class="artifact-item"><i class="fa-solid fa-desktop"></i> Analisis Media Pembelajaran</a>
+                            <a href="course-selektif.html" class="artifact-item"><i class="fa-solid fa-video"></i> Analisis Video Praktik Mengajar</a>
+                            <a href="course-selektif.html" class="artifact-item"><i class="fa-solid fa-users-gear"></i> Analisis Kegiatan Nonmengajar</a>
+                            <a href="course-selektif.html" class="artifact-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Penilaian & Analisis</a>
+                            <a href="course-selektif.html" class="artifact-item"><i class="fa-solid fa-box-archive"></i> Kumpulan Artefak</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-bottom: 1rem;">E-Portfolio Pendidikan Profesi Guru</h3>
+            <p>&copy; 2026 Disusun untuk memenuhi komponen penilaian PPL.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.3);">
+                Menampilkan Profil Guru, Kedalaman Analisis, Refleksi Diri, dan Navigasi UI/UX Modern.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            htmlElement.setAttribute('data-theme', 'light');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-theme') === 'light') {
+                htmlElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                htmlElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // ---- Mobile Hamburger Menu ----
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function openDrawer() {
+            hamburgerBtn.classList.add('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            mobileDrawer.classList.add('open');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            hamburgerBtn.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            mobileDrawer.classList.remove('open');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            if (mobileDrawer.classList.contains('open')) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        });
+
+        mobileOverlay.addEventListener('click', closeDrawer);
+
+        // Mobile dropdown toggles inside drawer
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.target;
+                const submenu = document.getElementById(targetId);
+                const isOpen = btn.classList.contains('open');
+                // Close all others
+                document.querySelectorAll('.mobile-dropdown-toggle').forEach(b => b.classList.remove('open'));
+                document.querySelectorAll('.mobile-submenu').forEach(m => m.classList.remove('open'));
+                if (!isOpen) {
+                    btn.classList.add('open');
+                    submenu.classList.add('open');
+                }
+            });
+        });
+
+        // Close drawer when a mobile nav link is clicked
+        mobileDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+
+        // Sync mobile theme toggle with desktop theme toggle
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        if (themeToggleMobile) {
+            const mobileIcon = themeToggleMobile.querySelector('i');
+            if (savedTheme === 'light') {
+                mobileIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+    <footer>
+        <div class="container">
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-bottom: 1rem;">E-Portfolio Pendidikan Profesi Guru</h3>
+            <p>&copy; 2026 Disusun untuk memenuhi komponen penilaian PPL.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.3);">
+                Menampilkan Profil Guru, Kedalaman Analisis, Refleksi Diri, dan Navigasi UI/UX Modern.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            htmlElement.setAttribute('data-theme', 'light');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-theme') === 'light') {
+                htmlElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                htmlElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // ---- Mobile Hamburger Menu ----
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function openDrawer() {
+            hamburgerBtn.classList.add('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            mobileDrawer.classList.add('open');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            hamburgerBtn.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            mobileDrawer.classList.remove('open');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            if (mobileDrawer.classList.contains('open')) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        });
+
+        mobileOverlay.addEventListener('click', closeDrawer);
+
+        // Mobile dropdown toggles inside drawer
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.target;
+                const submenu = document.getElementById(targetId);
+                const isOpen = btn.classList.contains('open');
+                // Close all others
+                document.querySelectorAll('.mobile-dropdown-toggle').forEach(b => b.classList.remove('open'));
+                document.querySelectorAll('.mobile-submenu').forEach(m => m.classList.remove('open'));
+                if (!isOpen) {
+                    btn.classList.add('open');
+                    submenu.classList.add('open');
+                }
+            });
+        });
+
+        // Close drawer when a mobile nav link is clicked
+        mobileDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+
+        // Sync mobile theme toggle with desktop theme toggle
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        if (themeToggleMobile) {
+            const mobileIcon = themeToggleMobile.querySelector('i');
+            if (savedTheme === 'light') {
+                mobileIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+            themeToggleMobile.addEventListener('click', () => {
+                themeToggle.click();
+                const isDark = !htmlElement.hasAttribute('data-theme');
+                mobileIcon.classList.toggle('fa-moon', isDark);
+                mobileIcon.classList.toggle('fa-sun', !isDark);
+            });
+        }
+
+        // Accordion Toggle Logic
+        function toggleAccordion(id) {
+            const accordion = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (accordion.style.display === 'none' || accordion.style.display === '') {
+                accordion.style.display = 'flex';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                accordion.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>

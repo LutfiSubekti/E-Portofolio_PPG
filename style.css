@@ -1566,6 +1566,7 @@ html[data-theme="light"] .quote-text {
     z-index: 1001;
     padding: 0.5rem 0;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0.25s;
     list-style: none;
     pointer-events: none;
 }
@@ -1913,4 +1914,171 @@ html[data-theme="light"] .hero h1 {
 
 html[data-theme="light"] .hero p {
     color: #475569;
+}
+
+/* ============================================== */
+/*             LMS Dashboard Cards                */
+/* ============================================== */
+.lms-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.lms-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.lms-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.lms-card-top {
+    height: 150px;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lms-card-top i {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.lms-card-top i:hover {
+    transform: scale(1.1);
+}
+
+.lms-card-body {
+    padding: 1.5rem;
+    background: #fff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+[data-theme='light'] .lms-card-body {
+    background: #fff;
+}
+
+/* We want the body to be always light like the image, or match the theme? 
+   The image showed a white background for the text part. Let's make it adapt to theme but look clean. */
+.lms-card-body {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme='light'] .lms-card-body {
+    background: #ffffff;
+}
+
+.lms-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+[data-theme='light'] .lms-card-title {
+    color: var(--primary-color);
+}
+
+.lms-card-title:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+.lms-card-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.lms-card-subtitle:hover {
+    text-decoration: underline;
+    color: var(--secondary);
+}
+
+.lms-card-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: auto;
+    display: block;
+}
+
+.lms-card-meta:hover {
+    text-decoration: underline;
+    color: var(--primary-light);
+}
+
+/* ============================================== */
+/*           LMS Card Artifact List               */
+/* ============================================== */
+.lms-artifact-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-top: 1px dashed var(--glass-border);
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.artifact-item {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-main);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+[data-theme='light'] .artifact-item {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #475569;
+}
+
+.artifact-item i {
+    color: var(--primary-light);
+    font-size: 0.85rem;
+}
+
+.artifact-item:hover {
+    background: rgba(79, 70, 229, 0.1);
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .artifact-item:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #2563eb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
