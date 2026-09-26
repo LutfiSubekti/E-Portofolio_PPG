@@ -13,6 +13,43 @@
     --warning: #f59e0b;
 }
 
+/* Simple, easy-on-eyes overrides for Semester 2 */
+body.simple {
+    --primary: #2563eb;
+    --primary-light: #60a5fa;
+    --secondary: #2f855a;
+    --dark: #f6f8fb;
+    --darker: #f6f8fb;
+    --light: #0f172a;
+    --glass-bg: rgba(255,255,255,0.85);
+    --glass-border: rgba(15,23,42,0.06);
+    --text-main: #0f172a;
+    --text-muted: #556b6b;
+    --success: #2f855a;
+    --warning: #d97706;
+}
+
+/* Reduce visual noise for simple page */
+body.simple .ambient-bg,
+body.simple .blob { display: none !important; }
+
+body.simple nav { background: transparent; box-shadow: none; border-bottom: 1px solid var(--glass-border); }
+body.simple .logo span { color: var(--text-main); }
+body.simple .nav-links a { color: var(--text-main); }
+body.simple .nav-links a::after { display: none; }
+
+body.simple .lms-card { background: #fff; border: 1px solid var(--glass-border); box-shadow: none; }
+body.simple .lms-card-body { background: #fff; color: var(--text-main); }
+body.simple .lms-card-top { height: 110px; display: flex; align-items: center; justify-content: flex-end; }
+body.simple .lms-card-title { color: var(--primary); }
+body.simple .artifact-item { background: transparent; border: 1px solid rgba(0,0,0,0.04); color: var(--text-main); }
+
+body.simple .section-title { background: none; color: var(--text-main); -webkit-text-fill-color: initial; }
+body.simple footer { background: transparent; color: var(--text-muted); border-top: 1px solid var(--glass-border); }
+
+body.simple .theme-toggle-btn { background: transparent; border: 1px solid var(--glass-border); color: var(--text-main); }
+
+
 * {
     margin: 0;
     padding: 0;
